@@ -1,0 +1,23 @@
+import React, { useContext } from 'react'
+import TransactionContext from '../context/TransactionContext'
+
+const ListItem = ({transaction , }) => {
+
+  const {dispatch} = useContext(TransactionContext)
+  return (
+   <>
+     <li className='my-2 relative border border-gray-300 p-4'>
+            <p className='text-sm text-gray-400 my-2'>#{transaction.id}</p>
+            <h1 className='text-4xl font-bold my-2'>{transaction.amount}</h1>
+            <h2 className='text-2xl my-2 font-semibold'>{transaction.text}</h2>
+
+            <div className='absolute right-5 bottom-5'>
+              <button onClick={() => dispatch({type : "EDIT_TRANSACTION" , payload : transaction})} className=' rounded bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-semibold text-sm mx-1 p-1 px-2 '>Edit</button>
+              <button  onClick={() => dispatch({type : "REMOVE_TRANSACTION" , payload : transaction.id})} className=' rounded bg-red-500 hover:bg-red-600 cursor-pointer text-white font-semibold text-sm mx-1 p-1 px-2 '>Delete</button>
+            </div>
+          </li>
+   </>
+  )
+}
+
+export default ListItem
