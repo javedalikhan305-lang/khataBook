@@ -3,7 +3,7 @@ import TransactionContext from '../context/TransactionContext'
 
 const Dashboard = () => {
 
-  const {transactions} = useContext(TransactionContext)
+  const {transactions , dispatch} = useContext(TransactionContext)
 
 let income = transactions
 .filter(transaction => transaction.amount > 0)
@@ -18,6 +18,7 @@ let Balance = transactions
 
   return (
     <>
+    <button onClick={() => dispatch({type : "CHANGE_THEME"})} className=" my-4 -mt-10 cursor-pointer font-bold hover:bg-gray-400  bg-gray-600 py-2 px-4 rounded text-white">Change Theme</button>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
         <div className='bg-blue-900 p-4'>
            <h2 className='text-2xl font-bold text-white'>Income :</h2>

@@ -8,7 +8,8 @@ export const TransactionProvider = ({children}) => {
 const initialState = {
     showModal : false,
     transactions :[{id:1,text : "sample", amount :999 }],
-    edit  : {transaction :{}, isEdit :false}
+    edit  : {transaction :{}, isEdit :false},
+     theme : false
 }
 
 

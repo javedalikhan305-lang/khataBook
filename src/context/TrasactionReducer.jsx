@@ -7,6 +7,11 @@ export const TransactionReducer = (state, action) => {
                 ...state,
                 showModal: state.showModal ? false : true
             }
+              case "CHANGE_THEME":
+            return{
+                ...state,
+               theme : state.theme ? false: true 
+            }
 
         case "SAVE_TRASACTION":
             return {
