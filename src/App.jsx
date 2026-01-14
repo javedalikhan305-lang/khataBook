@@ -11,7 +11,7 @@ const {theme } = useContext(TransactionContext)
   return (
     <>
       <Navbar />
-      <div className={theme ? " bg-gray-500 p-12 relative " : "p-12 relative bg-white"} >
+      <div className={theme ? " bg-gray-700 p-12 min-h-screen relative " : "p-12 min-h-screen relative bg-white"} >
         <Dashboard />
         <Form />
         <ListGroup />
